@@ -11,11 +11,11 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    container:
+      image: node:16
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.uo4qlon.mongodb.net
-#      MONGODB_USERNAME: ricardo-jorge-correia
-#      MONGODB_PASSWORD: rIRStpDNhgCwxIK5
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
